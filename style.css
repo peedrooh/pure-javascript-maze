@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* RESET */
+body, div, header, h1, button, p {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Lobster', cursive;
+}
+
+.hidden {
+    display: none;
+}
+
+/* MOBILE */
+body {
+    background-image: url(./images/background.jpeg);
+    background-size: 70%;
+}
+
+/* HEADER */ 
+header {
+    position: relative;
+    height: 15rem;
+}
+
+    h1 {
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    h1.start {
+        top: 190px;
+        font-size: 5rem;
+    }
+
+    h1.restart {
+        top: 1.5rem;
+        font-size: 3rem;
+        transition: 1s;
+    }
+
+/* MAZE */
+#game {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 12px;
+}
+
+     div#backgroundTexture {
+        position: absolute;
+        z-index: -1;
+        margin: 5px 0;
+        filter: brightness(85%);
+        width: 570px;
+        height: 410px;
+        background-image: url(./images/sand.jpeg);
+        background-size: 30px;
+        border-radius: 8px;
+    }
+
+    div#maze {
+        min-width: 588px;
+        min-height: 0;
+        margin: 0 auto;
+    }
+
+        div#line {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+            div#cell {
+                width: 28px;
+                height: 28px;
+            }
+
+            div.wall {
+                background-image: url(./images/busch.png);
+                background-size: 28px;
+                transition: 1s;
+            }
+
+            div.wallHidden {
+                color: #0000;
+                background-color: #0000;
+            }
+
+                div#character1 {
+                    width: 28px;
+                    height: 28px;
+                    background-image: url(./images/character1.png);
+                    background-size: 30px;
+                }
+            
+                div#character2 {
+                    width: 28px;
+                    height: 28px;
+                    background-image: url(./images/character2.png);
+                    background-size: 30px;
+                }
+            
+                div#character3 {
+                    width: 28px;
+                    height: 28px;
+                    background-image: url(./images/character3.PNG);
+                    background-size: 30px;
+                }
+            
+                div#character4 {
+                    width: 28px;
+                    height: 28px;
+                    background-image: url(./images/character4.PNG);
+                    background-size: 30px;
+                }
+
+                div.slideRight {
+                    animation-name: slideRight;
+                    animation-duration: 200ms;
+                }
+
+                div.slideUp {
+                    animation-name: slideUp;
+                    animation-duration: 200ms;
+                }
+
+                div.slideDown {
+                    animation-name: slideDown;
+                    animation-duration: 200ms;
+                }
+
+                div.slideLeft {
+                    animation-name: slideLeft;
+                    animation-duration: 200ms;
+                }
+            
+            img {
+                width: auto;
+                height: auto;
+                margin: auto;
+                max-width: 200px;
+                max-height: 250px;
+            }
+
+
+/* USER INPUT */ 
+div#userInput {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0006;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+    div#userInput.start {
+        top: 300px;
+    }
+
+    div#userInput.restart {
+        top: 90px;
+        transition: 1s;
+    }
+
+    p#inputMessage {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 5px;
+    }
+
+    .radioCharacter {
+        display: none;
+    }
+
+    .radioCharacter + label:before {
+        content: '';
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        background-size: 60px;
+        border-radius: 3px;
+        margin-right: 5px;
+        margin-bottom: -2px;
+    }
+
+        #character1 + label:before {
+            background-image: url(./images/character1.png);
+            background-size: 60px;
+        }
+
+        #character2 + label:before {
+            background-image: url(./images/character2.png);
+            background-size: 60px;
+        }
+
+        #character3 + label:before {
+            background-image: url(./images/character3.PNG);
+            background-size: 60px;
+        }
+
+        #character4 + label:before {
+            background-image: url(./images/character4.PNG);
+            background-size: 60px;
+        }
+
+    .radioCharacter:checked + label:before {
+        background-color: #94949480;
+    }
+
+    .radioCharacter:hover + label:before {
+        background: #94949480;
+    }
+
+    p#dificulty {
+        text-align: center;
+        color: #fff;
+    }
+
+
+/* BUTTON */
+button {
+    background-color: #b92222;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+    button#start {
+        top: 440px;
+    }
+
+    button#restart {
+        top: 730px;
+        transition: 1s;
+    }
+
+/* WINNING RELATED */
+p#winMessage {
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.characterComemoration {
+    animation-name: comemoration;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+/* ANIMATIOS */
+@keyframes slideRight {
+    from {margin-left: -28px;}
+    to {margin-left: 0;}
+}
+
+@keyframes slideUp {
+    from {margin-top: 28px;}
+    to {margin-top: 0px;}
+}
+
+@keyframes slideDown {
+    from {margin-top: -28px;}
+    to {margin-top: 0px;}
+}
+
+@keyframes slideLeft {
+    from {margin-left: 28px;}
+    to {margin-left: 0px;}
+}
+
+@keyframes comemoration {
+    0% {
+        margin-top: 0px;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        margin-top: -30px;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        margin-top: 0px;
+        transform: rotate(0deg);
+    }
+
+    75% {
+        margin-top: -30px;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        margin-top: 0px;
+        transform: rotate(360deg);
+    }
+}
