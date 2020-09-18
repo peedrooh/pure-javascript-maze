@@ -120,7 +120,6 @@ document.getElementById('start').addEventListener('click', startGame)
 // BUBBLING
 function keyInput(event) {
     const keyName = event.key.toLowerCase()
-    console.log(keyName)
     switch (keyName) {
         case 'arrowup':
         case 'w':
