@@ -200,12 +200,12 @@ div#userInput {
         }
 
         #character3 + label:before {
-            background-image: url(./images/character3.PNG);
+            background-image: url(./images/character3.png);
             background-size: 60px;
         }
 
         #character4 + label:before {
-            background-image: url(./images/character4.PNG);
+            background-image: url(./images/character4.png);
             background-size: 60px;
         }
 
