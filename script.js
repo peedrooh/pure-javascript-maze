@@ -120,20 +120,21 @@ document.getElementById('start').addEventListener('click', startGame)
 // BUBBLING
 function keyInput(event) {
     const keyName = event.key.toLowerCase()
+    console.log(keyName)
     switch (keyName) {
-        case 'ArrowUp':
+        case 'arrowup':
         case 'w':
             changeCharacterPosition(-1, 0, 'slideUp') 
             break
-        case 'ArrowDown':
+        case 'arrowdown':
         case 's':
             changeCharacterPosition(1, 0, 'slideDown')
             break
-        case 'ArrowLeft':
+        case 'arrowleft':
         case 'a':
             changeCharacterPosition(0, -1, 'slideLeft')
             break
-        case 'ArrowRight':
+        case 'arrowright':
         case 'd':
             changeCharacterPosition(0, 1, 'slideRight')
             break
