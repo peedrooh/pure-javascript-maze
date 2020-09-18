@@ -32,7 +32,7 @@ const map = [[
     "W WWW W WWWW W WW W W",
     "W     W             W",
     "WWWWWWWWWWWWWWWWWWWWW",
-],
+], 
 [
     "WWWWWWWWWWWWWWWWWWWWW",
     "S WWWWW            WW",
