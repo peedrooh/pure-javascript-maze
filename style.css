@@ -109,14 +109,14 @@ header {
                 div#character3 {
                     width: 28px;
                     height: 28px;
-                    background-image: url(./images/character3.PNG);
+                    background-image: url(./images/character3.png);
                     background-size: 30px;
                 }
             
                 div#character4 {
                     width: 28px;
                     height: 28px;
-                    background-image: url(./images/character4.PNG);
+                    background-image: url(./images/character4.png);
                     background-size: 30px;
                 }
 
